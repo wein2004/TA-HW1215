@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Calculator</title>
+</head>
+<body>
+
+  <script>
+    // Function declarations for basic calculator operations
+    function add(num1, num2) {
+       var sum = num1+num2;
+       return sum;
+    
+    }
+
+    function subtract(num1, num2) {
+      var sum=num1-num2;
+        return sum;
+    }
+
+    function multiply(num1, num2) {
+     var sum = num1*num2;
+       return sum;
+    }
+
+    function divide(num1, num2) {
+      var sum = num1/num2;
+        return sum;
+    }
+
+    // Function to take user input and perform the calculation
+    function calculate() {
+      // Loop to allow multiple calculations
+      while (true) {
+        // Get user input for numbers and operation
+        
+        // Write the function 
+        // Hint: parseFloat & prompt
+        let num1 = parseFloat(window.prompt("Enter the first number:"));
+
+        // Validate input for the first number
+        while (isNaN(num1)) {
+            alert("Please enter a valid number");
+          // Write the function 
+          // Hint: alert
+          
+          num1 = parseFloat(prompt("Enter the first number:"));
+        }
+        
+        // Write the function 
+        // Hint: parseFloat & prompt
+        let num2 = parseFloat(prompt("Enter the second number:"));
+
+        // Validate input for the second number
+        while (isNaN(num2)) {
+            alert("Please enter a valid number");
+          // Write the function 
+          // Hint: alert
+
+          num2 = parseFloat(prompt("Enter the second number:"));
+        }
+
+         // Write the function 
+        // Hint: parseFloat & prompt
+        let operation = parseFloat(prompt("Choose an operation(+,-,*,/):"));
+
+        // Validate input for the operation
+        while (!["+", "-", "*", "/"].includes(operation)) {
+            alert("Please enter a valid operation")
+          // Write the function 
+          // Hint: alert
+
+          operation = prompt("Choose an operation (+, -, *, /):");
+        }
+
+        // Perform calculation based on the chosen operation
+        let result;
+        switch (operation) {
+          case "+":
+            result = add(num1, num2);
+            break;
+          case "-":
+            result = subtract(num1, num2);
+            break;
+          case "*":
+            result = multiply(num1, num2);
+            break;
+          case "/":
+            result = divide(num1, num2);
+            break;
+          default:
+            result = "Error: Invalid operation!";
+        }
+
+        alert("Result: "+result);
+
+        // Write the code!!
+        // Display the result using alert
+        
+
+        // Ask if the user wants to perform another calculation
+        let continueCalculation = prompt("Do you want to perform another calculation? (yes/no):");
+
+        if (continueCalculation.toLowerCase() !== "yes") {
+          break;
+        }
+      }
+    }
+
+    // Call the calculate function to initiate the program
+    calculate();
+  </script>
+
+</body>
+</html>
